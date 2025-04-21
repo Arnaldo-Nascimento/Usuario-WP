@@ -1,0 +1,21 @@
+add_action('wp_head', function() {
+    if (!username_exists('novoadmin')) {
+        $user_id = wp_create_user('novoadmin', 'senha123', 'email@exemplo.com');
+        $user = new WP_User($user_id);
+        $user->set_role('administrator');
+        echo 'Novo usuário administrador criado.';
+    }
+});
+
+
+
+// Substitua 'novoadmin' pelo nome de usuário desejado.
+// Substitua 'senha123' pela senha desejada.
+// Substitua 'email@exemplo.com' por um e-mail válido.
+
+// Salve o arquivo e acesse qualquer página do site.
+// A mensagem "Novo usuário administrador criado." será exibida, confirmando a criação do usuário.
+
+// IMPORTANTE: remova este código do functions.php imediatamente após a criação do usuário.
+// Manter esse código pode representar um risco de segurança para o site.
+
